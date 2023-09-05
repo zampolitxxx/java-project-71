@@ -2,6 +2,7 @@ package hexlet.code;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
 
 import java.util.concurrent.Callable;
 
@@ -10,10 +11,17 @@ import java.util.concurrent.Callable;
 
 public class App implements Callable{
 
+    @Option(names = {"-f", "--format"},
+        description = "output format [default: stylish]",
+        paramLabel = "format",
+        defaultValue = "stylish")
+    private String format;
+
     @Override
     public Integer call() throws Exception {
         try {
             System.out.println("hello");
+            System.out.println(format);
         } catch(Exception e) {
             System.err.println(e.getMessage());
             return 1;
