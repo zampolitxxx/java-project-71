@@ -1,10 +1,14 @@
+/*
+* created by zampolit 04.09.2023
+*/
 package hexlet.code;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-
+import picocli.CommandLine.Parameters;
 import java.util.concurrent.Callable;
+
 
 @Command(name = "gendiff", mixinStandardHelpOptions = true,
         version = "gendiff 0.1", description = "Compares two configuration files and shows a difference.")
@@ -17,12 +21,19 @@ public class App implements Callable{
         defaultValue = "stylish")
     private String format;
 
+    @Parameters(index = "0", description = "Path to first file")
+    private String filePathFirst;
+
+    @Parameters(index = "1", description = "Path to second file")
+    private String filePathSecond;
+
     @Override
     public Integer call() throws Exception {
         try {
-            System.out.println("hello");
-            System.out.println(format);
+            String result = Checker.check(filePathFirst, filePathSecond, format);
+            System.out.println(result);
         } catch(Exception e) {
+            System.out.println("Something wrong");
             System.err.println(e.getMessage());
             return 1;
         }
