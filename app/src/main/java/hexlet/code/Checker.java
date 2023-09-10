@@ -11,7 +11,11 @@ public class Checker {
 
     public static String check (String filePath1, String filePath2, String format) throws Exception {
         Path firstFilePath = createPath(filePath1);
+        Path secondFilePath = createPath(filePath2);
         String contentFile1 = Files.readString(firstFilePath);
+        String contentFile2 = Files.readString(secondFilePath);
+
+        Parser.parse(contentFile1);
         System.out.println(contentFile1);
         return contentFile1;
     }
@@ -20,6 +24,7 @@ public class Checker {
         try {
             return Paths.get(pathString);
         } catch (InvalidPathException e) {
+            System.out.println("wrong!!!!!");
             String pathMessage = e.getMessage();
             if(pathMessage == null) {
                 pathMessage = e.toString();

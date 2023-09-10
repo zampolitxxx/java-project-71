@@ -34,7 +34,8 @@ public class App implements Callable{
             System.out.println(result);
         } catch(Exception e) {
             System.out.println("Something wrong");
-            System.err.println(e.getMessage());
+            e.printStackTrace();
+            System.err.println(e.getStackTrace().getClass());
             return 1;
         }
         return 0;
