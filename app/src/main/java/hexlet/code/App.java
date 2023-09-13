@@ -13,7 +13,7 @@ import java.util.concurrent.Callable;
 @Command(name = "gendiff", mixinStandardHelpOptions = true,
         version = "gendiff 0.1", description = "Compares two configuration files and shows a difference.")
 
-public class App implements Callable{
+public class App implements Callable {
 
     @Option(names = {"-f", "--format"},
         description = "output format [default: stylish]",
@@ -32,7 +32,7 @@ public class App implements Callable{
         try {
             String result = Engine.check(filePathFirst, filePathSecond, format);
             System.out.println(result);
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Something wrong");
             e.printStackTrace();
             System.err.println(e.getStackTrace().getClass());

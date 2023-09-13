@@ -24,9 +24,7 @@ public class Differ {
             String key = data.getKey();
             Object value = data.getValue();
             if (map1.containsKey(key)) {
-                if (map1.containsValue(value)) {
-                    continue;
-                } else {
+                if (!map1.containsValue(value)) {
                     sb.append(" + ").append(key).append(": ").append(value).append("\n");
                 }
             } else {
