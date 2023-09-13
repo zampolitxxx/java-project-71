@@ -1,9 +1,8 @@
 package hexlet.code;
 
 import java.util.Map;
-import java.util.Objects;
 
-public class DifferentFinder {
+public class Differ {
     public static <V> String generate(Map<String, V> map1, Map<String, V> map2) {
         String result = "";
         StringBuilder sb = new StringBuilder("{\n");
