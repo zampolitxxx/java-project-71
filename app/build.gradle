@@ -25,6 +25,12 @@ dependencies {
 
 }
 
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
 test {
     useJUnitPlatform()
 }
