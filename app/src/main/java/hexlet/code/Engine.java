@@ -14,13 +14,15 @@ public class Engine {
     public static String check(String filePath1, String filePath2, String format) throws Exception {
         Path firstFilePath = createPath(filePath1);
         Path secondFilePath = createPath(filePath2);
+
+        String file1Extension = getExtension(String.valueOf(firstFilePath));
+        String file2Extension = getExtension(String.valueOf(secondFilePath));
+
         String contentFile1 = Files.readString(firstFilePath);
         String contentFile2 = Files.readString(secondFilePath);
 
-        TreeMap<String, Object> file1 = new TreeMap<>(Parser.parse(contentFile1));
-        TreeMap<String, Object> file2 = new TreeMap<>(Parser.parse(contentFile2));
-        System.out.println(file1);
-        System.out.println(file2);
+        TreeMap<String, Object> file1 = new TreeMap<>(Parser.parse(contentFile1, file1Extension));
+        TreeMap<String, Object> file2 = new TreeMap<>(Parser.parse(contentFile2, file2Extension));
         String result = Differ.generate(file1, file2);
         return result;
     }
@@ -39,4 +41,9 @@ public class Engine {
         }
     }
 
+    private static String getExtension(String path) {
+        int dotIndex = path.lastIndexOf('.');
+        return dotIndex > 0
+                ? path.substring(dotIndex + 1) : "";
+    }
 }
