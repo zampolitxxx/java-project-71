@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Differ {
     public static <V> String generate(Map<String, V> map1, Map<String, V> map2) {
@@ -24,7 +25,7 @@ public class Differ {
             String key = data.getKey();
             Object value = data.getValue();
             if (map1.containsKey(key)) {
-                if (!map1.containsValue(value)) {
+                if (Objects.equals(value, map1.get(key))) {
                     sb.append(" + ").append(key).append(": ").append(value).append("\n");
                 }
             } else {
