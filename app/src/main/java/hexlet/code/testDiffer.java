@@ -3,9 +3,11 @@ import java.nio.file.Path;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.InvalidPathException;
+import java.util.Map;
 import java.util.TreeMap;
 public class testDiffer {
     public static void main(String[] args) throws Exception{
+        String format = "stylish";
         String filePath1 = "app/src/test/resources/file3.json";
         String filePath2 = "app/src/test/resources/file4.json";
         Path firstFilePath = createPath(filePath1);
@@ -16,7 +18,8 @@ public class testDiffer {
         String contentFile2 = Files.readString(secondFilePath);
         TreeMap<String, Object> file1 = new TreeMap<>(Parser.parse(contentFile1, file1Extension));
         TreeMap<String, Object> file2 = new TreeMap<>(Parser.parse(contentFile2, file2Extension));
-        String result = Differ.generate(file1, file2);
+        Map dif = Differ.generate(file1, file2);
+        String result = Formatter.create(dif, format);
         System.out.println(result);
     }
     private static Path createPath(String pathString) throws Exception {

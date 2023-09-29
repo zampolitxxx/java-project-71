@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.InvalidPathException;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Engine {
@@ -23,8 +24,8 @@ public class Engine {
 
         TreeMap<String, Object> file1 = new TreeMap<>(Parser.parse(contentFile1, file1Extension));
         TreeMap<String, Object> file2 = new TreeMap<>(Parser.parse(contentFile2, file2Extension));
-        String result = Differ.generate(file1, file2);
-        return result;
+//        Map<String, Object> = Differ.generate(file1, file2);
+        return "result";
     }
 
     private static Path createPath(String pathString) throws Exception {
