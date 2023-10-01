@@ -16,9 +16,11 @@ import java.nio.file.Path;
 
 public class AppTest {
     private static String exp;
+    private static String expPlain;
     @BeforeAll
     public static void beforeAll() throws IOException {
         exp = Files.readString(Path.of("src/test/resources/result2.txt"));
+        expPlain = Files.readString(Path.of("src/test/resources/result3.txt"));
     }
 
     @Test
@@ -43,5 +45,10 @@ public class AppTest {
     void stylishTestYAML() throws Exception {
         String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "stylish");
         assertEquals(exp, res);
+    }
+    @Test
+    void testPlain() throws Exception {
+        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "plain");
+        assertEquals(expPlain, res);
     }
 }
