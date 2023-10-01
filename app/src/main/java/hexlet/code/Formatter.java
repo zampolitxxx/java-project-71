@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.formatters.Stylish;
 import hexlet.code.formatters.Plain;
+import hexlet.code.formatters.JSON;
 import java.util.Map;
 
 public class Formatter {
@@ -13,6 +14,9 @@ public class Formatter {
             }
             case "plain" -> {
                 result = Plain.format(data);
+            }
+            case "JSON" -> {
+                result = JSON.format(data);
             }
             default -> {
                 throw new Exception("Formatter.java: format "  + "'" + format + "'" + " is wrong!");
