@@ -13,3 +13,6 @@
 
 ### asciinema record (plain format)
 [![asciicast](https://asciinema.org/a/bMes7OsrR9lW9yG5yCQcrPCgt.svg)](https://asciinema.org/a/bMes7OsrR9lW9yG5yCQcrPCgt)
+
+### asciinema record (JSON format)
+[![asciicast](https://asciinema.org/a/yQABwybel5uI7gPMMCaW0AYpE.svg)](https://asciinema.org/a/yQABwybel5uI7gPMMCaW0AYpE)
