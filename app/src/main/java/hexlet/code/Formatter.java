@@ -10,7 +10,7 @@ public class Formatter {
                 result = Stylish.format(data);
             }
             default -> {
-                result = "Unknown format " + "'" + format + "'";
+                throw new Exception("Formatter.java: format "  + "'" + format + "'" + " is wrong!");
             }
         }
         return result;
