@@ -17,10 +17,12 @@ import java.nio.file.Path;
 public class AppTest {
     private static String exp;
     private static String expPlain;
+    private static String expJSON;
     @BeforeAll
     public static void beforeAll() throws IOException {
         exp = Files.readString(Path.of("src/test/resources/result2.txt"));
         expPlain = Files.readString(Path.of("src/test/resources/result3.txt"));
+        expJSON = Files.readString(Path.of("src/test/resources/result4.txt"));
     }
 
     @Test
@@ -50,5 +52,10 @@ public class AppTest {
     void testPlain() throws Exception {
         String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "plain");
         assertEquals(expPlain, res);
+    }
+    @Test
+    void testjson() throws Exception {
+        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "JSON");
+        assertEquals(expJSON, res);
     }
 }
