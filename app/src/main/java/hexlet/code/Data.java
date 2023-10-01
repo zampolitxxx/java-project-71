@@ -1,3 +1,8 @@
+/*
+* Created by zampolit 20.09.2023
+* It is used as a value in the map to store data in its fields
+ */
+
 package hexlet.code;
 
 public class Data extends Object {
@@ -25,7 +30,6 @@ public class Data extends Object {
 
     @Override
     public String toString() {
-//        + "value1: " + val1.toString() + "value2: " + val2.toString()
         String perfomance = "status: " + status;
         return perfomance;
     }

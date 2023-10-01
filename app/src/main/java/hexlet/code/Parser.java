@@ -3,8 +3,6 @@ package hexlet.code;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
-
-//import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Parser {

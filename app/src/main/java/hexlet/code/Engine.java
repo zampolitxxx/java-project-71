@@ -1,3 +1,8 @@
+/*
+* Created by zampolit 20.09.2023
+* Accepts from App.java file paths, data output format.
+* Calls all auxiliary methods and returns the result to the App.java as a string.
+ */
 package hexlet.code;
 
 import java.nio.file.Path;
@@ -33,7 +38,6 @@ public class Engine {
         try {
             return Paths.get(pathString);
         } catch (InvalidPathException e) {
-            System.out.println("wrong!!!!!");
             String pathMessage = e.getMessage();
             if (pathMessage == null) {
                 pathMessage = e.toString();

@@ -1,3 +1,8 @@
+/*
+* Created by zampolit 20.09.2023
+* Returns the map in the format: String key: Data value.
+* Data is my Class. It has fields: String status, Object val1, Object val2
+ */
 package hexlet.code;
 
 import java.util.Map;
@@ -28,7 +33,6 @@ public class Differ {
                 }
             }
         }
-//        System.out.println(result);
         return result;
     }
 }

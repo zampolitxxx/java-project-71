@@ -1,6 +1,12 @@
 /*
 * created by zampolit 04.09.2023
-*/
+* the class interacts with piccoli and passes it to the Engine.java
+* in the form of arguments:
+* path to the first file;
+* path to the second file;
+* data output format
+ */
+
 package hexlet.code;
 
 import picocli.CommandLine;
