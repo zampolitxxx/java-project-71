@@ -11,5 +11,6 @@ import org.junit.jupiter.api.Test;
 public class AppTest {
     @Test
     void test() throws Exception {
+        System.out.println(Engine.check("src/test/resources/file3.json", "src/test/resources/file4.json"));;
     }
 }

@@ -24,8 +24,9 @@ public class Engine {
 
         TreeMap<String, Object> file1 = new TreeMap<>(Parser.parse(contentFile1, file1Extension));
         TreeMap<String, Object> file2 = new TreeMap<>(Parser.parse(contentFile2, file2Extension));
-//        Map<String, Object> = Differ.generate(file1, file2);
-        return "result";
+        Map<String, Data> res = Differ.generate(file1, file2);
+        String result = Formatter.create(res, format);
+        return result;
     }
 
     private static Path createPath(String pathString) throws Exception {
