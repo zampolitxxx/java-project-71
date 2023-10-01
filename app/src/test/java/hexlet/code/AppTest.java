@@ -6,11 +6,42 @@
  */
 package hexlet.code;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class AppTest {
+    private static String exp;
+    @BeforeAll
+    public static void beforeAll() throws IOException {
+        exp = Files.readString(Path.of("src/test/resources/result2.txt"));
+    }
+
     @Test
-    void test() throws Exception {
-        System.out.println(Engine.check("src/test/resources/file3.json", "src/test/resources/file4.json"));;
+    void testJSON() throws Exception {
+        String res = Engine.check("src/test/resources/file3.json", "src/test/resources/file4.json");
+        assertEquals(exp, res);
+    }
+
+    @Test
+    void stylishTestJSON() throws Exception {
+        String res = Engine.check("src/test/resources/file3.json", "src/test/resources/file4.json", "stylish");
+        assertEquals(exp, res);
+    }
+
+    @Test
+    void testYAML() throws Exception {
+        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml");
+        assertEquals(exp, res);
+    }
+
+    @Test
+    void stylishTestYAML() throws Exception {
+        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "stylish");
+        assertEquals(exp, res);
     }
 }
