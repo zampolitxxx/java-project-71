@@ -9,17 +9,17 @@ public class Stylish {
             Data data = me.getValue();
             switch (data.getStatus()) {
                 case "added" -> {
-                    sb.append(" + " + me.getKey() + ": " + data.getVal2() + "\n");
+                    sb.append("  + " + me.getKey() + ": " + data.getVal2() + "\n");
                 }
                 case "deleted" -> {
-                    sb.append(" - " + me.getKey() + ": " + data.getVal1() + "\n");
+                    sb.append("  - " + me.getKey() + ": " + data.getVal1() + "\n");
                 }
                 case "unchanged" -> {
-                    sb.append("   " + me.getKey() + ": " + data.getVal1() + "\n");
+                    sb.append("    " + me.getKey() + ": " + data.getVal1() + "\n");
                 }
                 case "changed" -> {
-                    sb.append(" - " + me.getKey() + ": " + data.getVal1() + "\n");
-                    sb.append(" + " + me.getKey() + ": " + data.getVal2() + "\n");
+                    sb.append("  - " + me.getKey() + ": " + data.getVal1() + "\n");
+                    sb.append("  + " + me.getKey() + ": " + data.getVal2() + "\n");
                 }
                 default -> {
                     throw new Exception("Stylish.java: Status " + data.getStatus() + " is wrong!");
@@ -27,6 +27,7 @@ public class Stylish {
             }
 
         }
+        sb.append("}");
         String result = sb.toString();
         return result;
     }
