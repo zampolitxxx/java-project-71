@@ -10,3 +10,6 @@
 
 ### asciinema record (attached json/yml files)
 [![asciicast](https://asciinema.org/a/CE5yMdUYo8iOOhhTqwkA3Z8an.svg)](https://asciinema.org/a/CE5yMdUYo8iOOhhTqwkA3Z8an)
+
+### asciinema record (plain format)
+[![asciicast](https://asciinema.org/a/bMes7OsrR9lW9yG5yCQcrPCgt.svg)](https://asciinema.org/a/bMes7OsrR9lW9yG5yCQcrPCgt)
