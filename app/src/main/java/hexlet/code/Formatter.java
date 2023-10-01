@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.formatters.Stylish;
+import hexlet.code.formatters.Plain;
 import java.util.Map;
 
 public class Formatter {
@@ -8,6 +10,9 @@ public class Formatter {
         switch (format) {
             case "stylish" -> {
                 result = Stylish.format(data);
+            }
+            case "plain" -> {
+                result = Plain.format(data);
             }
             default -> {
                 throw new Exception("Formatter.java: format "  + "'" + format + "'" + " is wrong!");

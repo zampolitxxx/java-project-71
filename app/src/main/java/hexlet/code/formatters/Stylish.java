@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.formatters;
+
+import hexlet.code.Data;
 
 import java.util.Map;
 
