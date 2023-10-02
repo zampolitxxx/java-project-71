@@ -17,14 +17,15 @@ public class Plain {
             String representationVal2 = getRepresentation(val2);
             switch (data.getStatus()) {
                 case "added" -> {
-                    sb.append("\nProperty " + "'" + me.getKey() + "'" + " was added with value: " + representationVal2);
+                    sb.append("Property " + "'" + me.getKey() + "'" + " was added with value: "
+                            + representationVal2 + "\n");
                 }
                 case "deleted" -> {
-                    sb.append("\nProperty " + "'" + me.getKey() + "'" + " was removed");
+                    sb.append("Property " + "'" + me.getKey() + "'" + " was removed" + "\n");
                 }
                 case "changed" -> {
-                    sb.append("\nProperty " + "'" + me.getKey() + "'" + " was updated. From "
-                            + representationVal1 + " to " + representationVal2);
+                    sb.append("Property " + "'" + me.getKey() + "'" + " was updated. From "
+                            + representationVal1 + " to " + representationVal2 + "\n");
                 }
                 case "unchanged" -> {
                     continue;
