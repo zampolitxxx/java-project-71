@@ -27,35 +27,35 @@ public class AppTest {
 
     @Test
     void testJSON() throws Exception {
-        String res = Engine.check("src/test/resources/file3.json", "src/test/resources/file4.json");
+        String res = Differ.generate("src/test/resources/file3.json", "src/test/resources/file4.json");
         assertEquals(exp, res);
     }
 
     @Test
     void stylishTestJSON() throws Exception {
-        String res = Engine.check("src/test/resources/file3.json", "src/test/resources/file4.json", "stylish");
+        String res = Differ.generate("src/test/resources/file3.json", "src/test/resources/file4.json", "stylish");
         assertEquals(exp, res);
     }
 
     @Test
     void testYAML() throws Exception {
-        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml");
+        String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml");
         assertEquals(exp, res);
     }
 
     @Test
     void stylishTestYAML() throws Exception {
-        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "stylish");
+        String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml", "stylish");
         assertEquals(exp, res);
     }
     @Test
     void testPlain() throws Exception {
-        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "plain");
+        String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml", "plain");
         assertEquals(expPlain, res);
     }
     @Test
     void testjson() throws Exception {
-        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "json");
+        String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml", "json");
         assertEquals(expJSON, res);
     }
 }

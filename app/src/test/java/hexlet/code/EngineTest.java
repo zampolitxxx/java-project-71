@@ -20,7 +20,7 @@ public class EngineTest {
         String filePath1 = "src/test/resources/file1.json";
         String filePath2 = "src/test/resources/file2.json";
         Path realPath = Paths.get(resources);
-        String result = Engine.check(filePath1, filePath2);
+        String result = Differ.generate(filePath1, filePath2);
         String real = Files.readString(realPath);
         assertEquals(real, result);
     }

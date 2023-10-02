@@ -36,7 +36,7 @@ public class App implements Callable {
     @Override
     public Integer call() throws Exception {
         try {
-            String result = Engine.check(filePathFirst, filePathSecond, format);
+            String result = Differ.generate(filePathFirst, filePathSecond, format);
             System.out.println(result);
         } catch (Exception e) {
             System.out.println("Something wrong");
