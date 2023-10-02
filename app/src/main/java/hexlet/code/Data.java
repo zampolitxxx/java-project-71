@@ -16,15 +16,15 @@ public class Data extends Object {
         this.val2 = val2;
     }
 
-    public String getStatus() {
+    public final String getStatus() {
         return status;
     }
 
-    public Object getVal1() {
+    public final Object getVal1() {
         return val1;
     }
 
-    public Object getVal2() {
+    public final Object getVal2() {
         return val2;
     }
 
