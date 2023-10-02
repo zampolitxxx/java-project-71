@@ -55,7 +55,7 @@ public class AppTest {
     }
     @Test
     void testjson() throws Exception {
-        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "JSON");
+        String res = Engine.check("src/test/resources/file3.yml", "src/test/resources/file4.yml", "json");
         assertEquals(expJSON, res);
     }
 }

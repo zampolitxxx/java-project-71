@@ -15,7 +15,7 @@ public class Formatter {
             case "plain" -> {
                 result = Plain.format(data);
             }
-            case "JSON" -> {
+            case "json" -> {
                 result = JSON.format(data);
             }
             default -> {
