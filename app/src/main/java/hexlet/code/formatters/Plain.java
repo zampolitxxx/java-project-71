@@ -41,11 +41,12 @@ public class Plain {
 
     private static String getRepresentation(Object val) {
         if (val instanceof String) {
-            return "'" + String.valueOf(val) + "'";
+            return "'" + val + "'";
         } else if (val instanceof List<?> | val instanceof Array | val instanceof Map<?, ?>) {
             return "[complex value]";
-        } else {
-            return String.valueOf(val);
+        } else if (val == null) {
+            return "null";
         }
+        return String.valueOf(val);
     }
 }
