@@ -35,7 +35,7 @@ public class Plain {
                 }
             }
         }
-        String result = sb.toString();
+        String result = sb.toString().trim();
         return result;
     }
 
