@@ -29,7 +29,7 @@ public class Data extends Object {
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         String perfomance = "status: " + status;
         return perfomance;
     }
