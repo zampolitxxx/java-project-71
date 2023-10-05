@@ -15,47 +15,47 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class AppTest {
-    private static String exp;
-    private static String expPlain;
-    private static String expJSON;
+    private static String expectedStylish;
+    private static String expectedPlain;
+    private static String expectedJSON;
     @BeforeAll
     public static void beforeAll() throws IOException {
-        exp = Files.readString(Path.of("src/test/resources/result2.txt"));
-        expPlain = Files.readString(Path.of("src/test/resources/result3.txt"));
-        expJSON = Files.readString(Path.of("src/test/resources/result4.txt"));
+        expectedStylish = Files.readString(Path.of("src/test/resources/result2.txt"));
+        expectedPlain = Files.readString(Path.of("src/test/resources/result3.txt"));
+        expectedJSON = Files.readString(Path.of("src/test/resources/result4.txt"));
     }
 
     @Test
-    void testJSON() throws Exception {
+    void testGenerateToDefaultFromJSON() throws Exception {
         String res = Differ.generate("src/test/resources/file3.json", "src/test/resources/file4.json");
-        assertEquals(exp, res);
+        assertEquals(expectedStylish, res);
     }
 
     @Test
     void stylishTestJSON() throws Exception {
         String res = Differ.generate("src/test/resources/file3.json", "src/test/resources/file4.json", "stylish");
-        assertEquals(exp, res);
+        assertEquals(expectedStylish, res);
     }
 
     @Test
     void testYAML() throws Exception {
         String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml");
-        assertEquals(exp, res);
+        assertEquals(expectedStylish, res);
     }
 
     @Test
     void stylishTestYAML() throws Exception {
         String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml", "stylish");
-        assertEquals(exp, res);
+        assertEquals(expectedStylish, res);
     }
     @Test
     void testPlain() throws Exception {
         String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml", "plain");
-        assertEquals(expPlain, res);
+        assertEquals(expectedPlain, res);
     }
     @Test
     void testjson() throws Exception {
         String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml", "json");
-        assertEquals(expJSON, res);
+        assertEquals(expectedJSON, res);
     }
 }
