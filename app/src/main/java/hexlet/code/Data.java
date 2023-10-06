@@ -5,15 +5,15 @@
 
 package hexlet.code;
 
-public class Data extends Object {
+public class Data {
     private String status;
-    private Object val1;
-    private Object val2;
+    private Object oldValue;
+    private Object newValue;
 
     public Data(String status, Object val1, Object val2) {
         this.status = status;
-        this.val1 = val1;
-        this.val2 = val2;
+        this.oldValue = val1;
+        this.newValue = val2;
     }
 
     public final String getStatus() {
@@ -21,10 +21,10 @@ public class Data extends Object {
     }
 
     public final Object getVal1() {
-        return val1;
+        return oldValue;
     }
 
     public final Object getVal2() {
-        return val2;
+        return newValue;
     }
 }
