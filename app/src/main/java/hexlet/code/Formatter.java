@@ -19,7 +19,7 @@ public class Formatter {
                 result = JSON.format(data);
             }
             default -> {
-                throw new Exception("Formatter.java: format "  + "'" + format + "'" + " is wrong!");
+                throw new RuntimeException("Formatter.java: format "  + "'" + format + "'" + " is wrong!");
             }
         }
         return result;

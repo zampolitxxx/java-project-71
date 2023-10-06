@@ -43,7 +43,7 @@ public class Differ {
                 pathMessage = e.toString();
                 System.out.println("Это pathMessage - " + pathMessage);
             }
-            throw new Exception("Path " + pathString + " is wrong!");
+            throw new RuntimeException("Path " + pathString + " is wrong!");
         }
     }
 
