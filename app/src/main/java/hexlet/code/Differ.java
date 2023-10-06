@@ -27,14 +27,14 @@ public class Differ {
         String contentFile1 = Files.readString(firstFilePath);
         String contentFile2 = Files.readString(secondFilePath);
 
-        TreeMap<String, Object> file1 = new TreeMap<>(Parser.parse(contentFile1, file1Extension));
-        TreeMap<String, Object> file2 = new TreeMap<>(Parser.parse(contentFile2, file2Extension));
+        Map<String, Object> file1 = Parser.parse(contentFile1, file1Extension);
+        Map<String, Object> file2 = Parser.parse(contentFile2, file2Extension);
         Map<String, Data> res = DifferenceFinder.generate(file1, file2);
         String result = Formatter.create(res, format);
         return result;
     }
 
-    private static Path createPath(String pathString) throws Exception {
+    private static Path createPath(String pathString) {
         try {
             return Paths.get(pathString);
         } catch (InvalidPathException e) {
