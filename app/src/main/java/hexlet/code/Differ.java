@@ -10,7 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.InvalidPathException;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class Differ {
     public static String generate(String filePath1, String filePath2) throws Exception {
