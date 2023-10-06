@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class AppTest {
+public final class AppTest {
     private static String expectedStylish;
     private static String expectedPlain;
     private static String expectedJson;
