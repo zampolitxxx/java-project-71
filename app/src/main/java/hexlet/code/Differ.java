@@ -21,8 +21,8 @@ public class Differ {
         Path firstFilePath = createPath(filePath1);
         Path secondFilePath = createPath(filePath2);
 
-        String file1Extension = getExtension(String.valueOf(firstFilePath));
-        String file2Extension = getExtension(String.valueOf(secondFilePath));
+        String file1Extension = getExtension(String.valueOf(filePath1));
+        String file2Extension = getExtension(String.valueOf(filePath2));
 
         String contentFile1 = Files.readString(firstFilePath);
         String contentFile2 = Files.readString(secondFilePath);
