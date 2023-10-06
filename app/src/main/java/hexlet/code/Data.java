@@ -27,10 +27,4 @@ public class Data extends Object {
     public final Object getVal2() {
         return val2;
     }
-
-    @Override
-    public final String toString() {
-        String perfomance = "status: " + status;
-        return perfomance;
-    }
 }
