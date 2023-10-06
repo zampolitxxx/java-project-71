@@ -7,55 +7,40 @@
 package hexlet.code;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class AppTest {
     private static String expectedStylish;
     private static String expectedPlain;
-    private static String expectedJSON;
+    private static String expectedJson;
+    private static String pathToFixtures;
+
     @BeforeAll
-    public static void beforeAll() throws IOException {
-        expectedStylish = Files.readString(Path.of("src/test/resources/result2.txt"));
-        expectedPlain = Files.readString(Path.of("src/test/resources/result3.txt"));
-        expectedJSON = Files.readString(Path.of("src/test/resources/result4.txt"));
+    public static void beforeAll() throws Exception {
+        pathToFixtures = "src/test/resources/";
+        expectedStylish = getPathToFixtures("result2.txt");
+        expectedPlain = getPathToFixtures("result3.txt");
+        expectedJson = getPathToFixtures("result4.txt");
     }
 
-    @Test
-    void testGenerateToDefaultFromJSON() throws Exception {
-        String res = Differ.generate("src/test/resources/file3.json", "src/test/resources/file4.json");
-        assertEquals(expectedStylish, res);
+    private static String getPathToFixtures(String fileName) throws Exception {
+        return Files.readString(Path.of(pathToFixtures + fileName));
     }
 
-    @Test
-    void stylishTestJSON() throws Exception {
-        String res = Differ.generate("src/test/resources/file3.json", "src/test/resources/file4.json", "stylish");
-        assertEquals(expectedStylish, res);
-    }
+    @ParameterizedTest
+    @ValueSource(strings = {"json", "yml"})
+    void testGenerate(String format) throws Exception {
+        String filePath1 = pathToFixtures + "file3." + format;
+        String filePath2 = pathToFixtures + "file4." + format;
 
-    @Test
-    void testYAML() throws Exception {
-        String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml");
-        assertEquals(expectedStylish, res);
-    }
-
-    @Test
-    void stylishTestYAML() throws Exception {
-        String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml", "stylish");
-        assertEquals(expectedStylish, res);
-    }
-    @Test
-    void testPlain() throws Exception {
-        String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml", "plain");
-        assertEquals(expectedPlain, res);
-    }
-    @Test
-    void testjson() throws Exception {
-        String res = Differ.generate("src/test/resources/file3.yml", "src/test/resources/file4.yml", "json");
-        assertEquals(expectedJSON, res);
+        assertEquals(expectedStylish, Differ.generate(filePath1, filePath2));
+        assertEquals(expectedStylish, Differ.generate(filePath1, filePath2, "stylish"));
+        assertEquals(expectedPlain, Differ.generate(filePath1, filePath2, "plain"));
+        assertEquals(expectedJson, Differ.generate(filePath1, filePath2, "json"));
     }
 }
