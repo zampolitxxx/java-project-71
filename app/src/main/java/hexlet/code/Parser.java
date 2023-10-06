@@ -7,13 +7,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Parser {
     public static Map<String, Object> parse(String str, String extension) throws Exception {
         Map<String, Object> result;
-        ObjectMapper om = null;
-        if (extension.equals("json")) {
-            om = new ObjectMapper();
-        } else if (extension.equals("yml")) {
-            om = new YAMLMapper();
+        ObjectMapper mapper;
+        switch (extension) {
+            case "json" -> {
+                mapper = new ObjectMapper();
+            }
+            case "yml", "yaml" -> {
+                mapper = new YAMLMapper();
+            }
+            default -> throw new RuntimeException("Unsupported format: " + extension);
         }
-        result = om.readValue(str, Map.class);
+        result = mapper.readValue(str, Map.class);
         return result;
     }
 }
