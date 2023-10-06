@@ -17,7 +17,7 @@ it supports the following data output formats:
 where:
 format is one of the three supported format (stylish/plain/json)  
 for more information use:  
-`app -h`
+`pp -h`
 ### asciinema record (simple json/yml files)
 [![asciicast](https://asciinema.org/a/yCz1Jnk3MiT1w4mPeSuZroL7O.svg)](https://asciinema.org/a/yCz1Jnk3MiT1w4mPeSuZroL7O)
 
