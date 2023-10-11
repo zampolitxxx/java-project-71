@@ -23,9 +23,9 @@ public final class AppTest {
     @BeforeAll
     public static void beforeAll() throws Exception {
         pathToFixtures = "src/test/resources/";
-        expectedStylish = getPathToFixtures("result2.txt");
-        expectedPlain = getPathToFixtures("result3.txt");
-        expectedJson = getPathToFixtures("result4.txt");
+        expectedStylish = getPathToFixtures("result1.txt");
+        expectedPlain = getPathToFixtures("result2.txt");
+        expectedJson = getPathToFixtures("result1.json");
     }
 
     private static String getPathToFixtures(String fileName) throws Exception {
@@ -35,8 +35,8 @@ public final class AppTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yml"})
     void testGenerate(String format) throws Exception {
-        String filePath1 = pathToFixtures + "file3." + format;
-        String filePath2 = pathToFixtures + "file4." + format;
+        String filePath1 = pathToFixtures + "file1." + format;
+        String filePath2 = pathToFixtures + "file2." + format;
 
         assertEquals(expectedStylish, Differ.generate(filePath1, filePath2));
         assertEquals(expectedStylish, Differ.generate(filePath1, filePath2, "stylish"));
