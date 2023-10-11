@@ -41,8 +41,7 @@ public class Plain {
     private static String getRepresentation(Object val) {
         if (val == null) {
             return "null";
-        }
-        else if (val instanceof String) {
+        } else if (val instanceof String) {
             return "'" + val + "'";
         } else if (val instanceof List<?> | val instanceof Map<?, ?>) {
             return "[complex value]";
