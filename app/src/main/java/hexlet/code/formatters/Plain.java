@@ -2,7 +2,6 @@ package hexlet.code.formatters;
 
 import hexlet.code.Data;
 
-import java.lang.reflect.Array;
 import java.util.List;
 import java.util.Map;
 
