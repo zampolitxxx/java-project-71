@@ -40,12 +40,13 @@ public class Plain {
     }
 
     private static String getRepresentation(Object val) {
-        if (val instanceof String) {
-            return "'" + val + "'";
-        } else if (val instanceof List<?> | val instanceof Array | val instanceof Map<?, ?>) {
-            return "[complex value]";
-        } else if (val == null) {
+        if (val == null) {
             return "null";
+        }
+        else if (val instanceof String) {
+            return "'" + val + "'";
+        } else if (val instanceof List<?> | val instanceof Map<?, ?>) {
+            return "[complex value]";
         }
         return String.valueOf(val);
     }
